@@ -15,7 +15,10 @@ import lombok.Data;
 public class Categoria implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    
+    @OneToMany
+    @JoinColumn(name="id_categoria")
+    List<Producto> productos;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_categoria")
